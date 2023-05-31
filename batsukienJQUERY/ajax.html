@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#getWeather").click(function () {
+                var city = $("#city").val();
+                var url = "https://www.facebook.com/messenger_media?attachment_id=195831616628758&message_id=mid.%24cAABa-yXz1r2OH4ZTSmH7kDlZJAcM&thread_id=100034720028349" + city + "&units=metric&appid=YOUR_API_KEY";// units=metric được sử dụng để hiển thị nhiệt độ theo đơn vị Celsius.
+                $.get(url, function (data, status) {
+                    var temp = data.main.temp;
+                    var desc = data.weather[0].description;
+                    $("#result").html("<p>The current temperature in " + city + " is " + temp + "°C with " + desc + "</p>");
+                });
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <h1>Weather App</h1>
+    <p>Enter a city name:</p>
+    <input type="text" id="city">
+    <button id="getWeather">Get Weather</button>
+    <div id="result"></div>
+</body>
+
+</html>

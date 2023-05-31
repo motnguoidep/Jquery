@@ -1,0 +1,111 @@
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+     .hide {
+      display: none;
+    }
+    .show {
+      display: block;
+    }
+    
+    ul li {
+      display: inline-block;
+      margin: 0 10px;
+      background-color: red;
+    } 
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+      $('li').click(function(){
+        var tabId = $(this).attr('id');
+        $('.content > div').removeClass('show');
+        $('#' + tabId + 'content').addClass('show');
+      });
+    });
+</script>
+</head>
+
+<body >
+<div class="demo">
+    <ul>
+      <li class="active" id="tt">tin tuc</li>
+      <li id="bd">bong da</li>
+      <li id="ttr">thoi trang</li>
+    </ul>
+
+    <div class="content"> 
+      <div id="content1" class= "hide show">
+        tin tuc
+      </div>
+      <div id="content2" class="hide show">
+        bong da
+      </div>
+      <div id="content3" class="hide show">
+        thoi trang
+      </div>
+    </div>
+  </div>
+ 
+</body>
+
+</html> -->
+
+// Yêu cầu:  Click vào tab nào thi show menu con của tab đó bên dưới (sử dụng html bên dưới thêm class va id tuỳ thích)
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+    .hide {
+     display: none;
+   }
+   .show {
+     display: block;
+   }
+   
+   ul li {
+     display: inline-block;
+     margin: 0 10px;
+     background-color: red;
+   } 
+
+</style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('li').click(function(){
+        var value = $(this).attr('id');
+        $('.content > div').removeClass('show');
+        $('#' + value + 'content').addClass('show');
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="demo">
+    <ul>
+      <li class="active" id="tt">duoc gui</li>
+      <li id="bd">tu mot </li>
+      <li id="ttr">nguoi dep</li>
+    </ul>
+
+    <div class="content">
+      <div id="ttcontent" class="hide">
+        ngu
+      </div>
+      <div id="bdcontent" class="hide">
+        ngon
+      </div>
+      <div id="ttrcontent" class="hide ">
+        nha!
+      </div>
+    </div>
+  </div>
+</body>
+</html>

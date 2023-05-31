@@ -1,0 +1,334 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="">
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            background: pink;
+            color: #fff;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            min-height: 100vh;
+
+        }
+
+        .input_container {
+            width: 600px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+            border: 10px solid #dd94b7;
+        }
+
+
+        .input_container .input-row {
+            margin-bottom: 10px;
+        }
+
+        .input_container input:not([type='submit']),
+        .input_container textarea {
+            width: 100%;
+            margin: 0 0 3px;
+            background-color: #f7d6e6;
+            color: #000;
+            padding: 8px 0 8px 15px;
+            height: 50px;
+            line-height: 30px;
+            font-size: 20px;
+            border-radius: 5px;
+            border: 2px solid transparent;
+            outline: 0;
+            transition: all 0.5s ease-out;
+        }
+
+        .input_container textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        .input_container input:not([type='submit']):focus,
+        .input_container textarea:focus {
+            border-color: #dd94b7;
+
+        }
+
+        *::-webkit-input-placeholder {
+            opacity: 1;
+            color: #000;
+        }
+
+        .input_container input[type='submit'] {
+            padding: 10px 30px;
+            font-size: 18px;
+            line-height: 30px;
+            height: 50px;
+            text-align: center;
+            text-transform: uppercase;
+            cursor: pointer;
+            background-color: #f7d6e6;
+            color: #fff;
+            border: 0;
+            transition: all 0.3s ease-out;
+            border-radius: 5px;
+        }
+
+        .input_container input[type="submit"]:hover {
+            background-color: #dd94b7;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script>
+        $('#formValidation').validation({
+            rules: {
+                name: {
+                    minlength: 2
+                },
+                email: {
+                    email: true
+                },
+                phone: {
+                    number: true,
+                    minlength: 10,
+                    maxlength: 10
+                }
+            },
+            messages: {
+                name: {
+                    required: 'Please enter your name',
+                    minlength: 'Name at least 2 characters'
+                },
+                email: 'Please enter your email',
+                phone: 'Please enter your phone',
+                subject: 'Please enter your subject',
+                message: 'Please enter your message'
+            },
+            submitHandler: function (form) {
+                form.submit();
+            }
+        })
+
+    </script> -->
+<!-- </head>
+
+<body>
+    <div class="input_container">
+        <form name="formValidation" id="formValidation" action="valid.html">
+            <div class="input-row">
+                <label for="name">Họ và tên:</label>
+                <input type="text" name="name">
+            </div>
+            <div class="input-row">
+                <input type="emil" name="email" placeholder="Email">
+            </div>
+            <div class="input-row">
+                <input type="text" name="phone" placeholder="Phone">
+            </div>
+            <div class="input-row">
+                <input type="text" name="subject" placeholder="Subject">
+            </div>
+            <div class="input-row">
+                <textarea placeholder="Message*" name="formMessage" required></textarea>
+            </div>
+            <div class="text-center">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            background: pink;
+            color: #000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            min-height: 100vh;
+
+        }
+
+        .input_container {
+            width: 600px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+            border: 5px solid #dd94b7;
+        }
+
+        .input_container .input-row {
+            margin-bottom: 10px;
+        }
+
+        .input_container textarea {
+            height: 50px;
+            resize: none;
+        }
+
+        .input_container .wid {
+            width: 100%;
+        }
+
+        .input_container input[type='submit'] {
+            padding: 10px 30px;
+            font-size: 16px;
+            line-height: 30px;
+            height: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            cursor: pointer;
+            background-color: grey;
+            color: #fff;
+            border: 0;
+            transition: all 0.3s ease-out;
+            border-radius: 5px;
+        }
+
+        .input_container input[type="submit"]:hover {
+            background-color: #dd94b7;
+        }
+
+        #exit {
+            background-color: #dd94b7;
+
+        }
+
+        #exit:hover {
+            background-color: #dd94b7;
+        }
+
+        .errorPr {
+            color: red
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("form").submit(function (event) {
+                event.preventDefault()
+
+                var name = $('#name').val()
+                var email = $('#email').val()
+                var phone = $('#phone').val()
+                var address = $('#address').val()
+                var title = $('#title').val()
+                var content = $('#content').val()
+
+                if (name == "") {
+                    $("#errorName").html("Please enter your name")
+                } else {
+                    $("#errorName").html("")
+                }
+                if (email == "") {
+                    $("#errorEmail").html("Please enter your emai")
+                } else {
+                    $("#errorEmail").html("")
+                }
+                if (phone === "") {
+                    $("#errorPhone").html("Please enter your phone")
+                } else {
+                    $("#errorPhone").html("")
+                }
+                if (address === "") {
+                    $("#errorAddress").html("Please enter your address")
+                } else {
+                    $("#errorAddress").html("")
+                }
+                if (title === "") {
+                    $("#errorTitle").html("Please enter your title")
+                } else {
+                    $("#errorTitle").html("")
+                }
+                if (content === "") {
+                    $("#errorContent").html("Please enter your content")
+                } else {
+                    $("#errorContent").html("")
+                }
+                if (name !== "" && email !== "" && phone !== "" && address !== "" && title !== "" && content !== "") {
+                    $("form").unbind("submit").submit();
+                }
+
+            })
+            // function error(message) {
+            //     $('.errorPr').html(message)
+            //     $('.errorPđr').show()
+            //     $('.errorPr').css({
+            //         'color': 'red',
+            //         'font-size': '18px'
+            //     })
+            // }
+        })
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="input_container">
+        <form name="formValidation" id="formValidation" action="valid.html">
+            <div class="input-row ">
+                <label for="name">Name:</label>
+                <input class="wid" id="name" type="text" name="name">
+                <div id="errorName" class="errorPr"></div>
+            </div>
+            <div class="input-row">
+                <label for="name">Email:</label>
+                <input class="wid" id="email" type="email" name="email">
+                <div id="errorEmail" class="errorPr"></div>
+            </div>
+            <div class="input-row">
+                <label for="name">Phone:</label>
+                <input class="wid" id="phone" type="text" name="phone">
+                <div id="errorPhone" class="errorPr"></div>
+            </div>
+            <div class="input-row">
+                <label for="name">Address:</label>
+                <input class="wid" id="address" type="text" name="address">
+                <div id="errorAddress" class="errorPr"></div>
+            </div>
+            <div class="input-row">
+                <label for="name">Title:</label>
+                <input class="wid" id="title" type="text" name="title" placeholder="Feedback">
+                <div id="errorTitle" class="errorPr"></div>
+            </div>
+            <div class="input-row">
+                <label for="name">Content:</label>
+                <textarea class="wid" id="content" name="formMessage" required></textarea>
+                <div id="errorContent" class="errorPr"></div>
+            </div>
+            <div class="text-center">
+                <input id="exit" type="submit" value="Submit">
+                <input type="submit" value="Exit">
+
+            </div>
+            <!-- <div style="display: none;" class="errorPr"></div> -->
+
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+    background-color: pink;
+}
+ul li span {
+    display: none;
+    margin-left: 40px;
+    background-color: yellow;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('#myDiv').hover(function(){
+            $(this).addClass('hover')
+        },
+        function(){
+            $(this).removeClass('hover')
+        })
+ 
+    });
+</script>
+</head>
+
+<body>
+    <div id="myDiv">
+        <img src="https://scontent.fdad3-5.fna.fbcdn.net/v/t39.30808-6/278381720_737682860732375_7395511056092509097_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=UOdoWGHRIR0AX9iIqSy&_nc_ht=scontent.fdad3-5.fna&oh=00_AfBYEL9nEpvYK8ewJ_JpvEgS2bKU3Zddzw0vtNHctitqvg&oe=6453969C" width="500px" alt="anh cua thuong">
+    </div>
+ 
+</body>
+<style>
+    .hover{
+        border: 1px solid red;
+        width: 500px;
+    }
+</style>
+
+</html>

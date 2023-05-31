@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            background: pink;
+            color: #000;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            min-height: 100vh;
+
+        }
+
+        .input_container {
+            width: 600px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+            border: 5px solid #dd94b7;
+        }
+
+        .input_container .input-row {
+            margin-bottom: 10px;
+        }
+
+        .input_container textarea {
+            height: 50px;
+            resize: none;
+        }
+
+        .input_container .wid {
+            width: 100%;
+        }
+
+        .input_container input[type='submit'] {
+            padding: 10px 30px;
+            font-size: 16px;
+            line-height: 30px;
+            height: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            cursor: pointer;
+            background-color: grey;
+            color: #fff;
+            border: 0;
+            transition: all 0.3s ease-out;
+            border-radius: 5px;
+        }
+
+        .input_container input[type="submit"]:hover {
+            background-color: #dd94b7;
+        }
+
+        #exit {
+            background-color: #dd94b7;
+
+        }
+
+        #exit:hover {
+            background-color: #dd94b7;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // bai1
+        // $(document).ready(function () {
+        //     $('#myForm').submit(function (event) {
+        //         event.preventDefault();
+
+        //         var name = $('#name').val()
+        //         var email = $('#email').val()
+
+        //         if (name == "" || email == "") {
+        //             error('Vui long nhap đay du thong tin')
+        //             event.preventDefault();
+        //         }
+        //         else if (email.length < 6 || email.length > 30) {
+        //             error('Email khong hop le!')
+        //             event.preventDefault();
+
+        //         }
+        //         else if (!email.includes('@')) {
+        //             error('Email khong hop le')
+        //             event.preventDefault();
+
+        //         }
+        //     });
+        // });
+        // function error(pr) {
+        //     $('.errorPr').html(pr)
+        //     $('.errorPr').show()
+        // }
+
+        // bai2
+        // $(document).ready(function () {
+        //     $('form').submit(function (event) {
+        //         event.preventDefault()
+
+        //         var name = $('#name').val()
+        //         var result = $('#result')
+        //         result.html(' Hi ' + name + '!!')
+        //     })
+        // })
+
+        $(document).ready(function () {
+            $("form").submit(function (event) {
+                event.preventDefault()
+
+                var name = $('#name').val()
+                var email = $('#email').val()
+                var phone = $('#phone').val()
+                var address = $('#address').val()
+                var title = $('#title').val()
+                var content = $('#content').val()
+
+                if (name == "") {
+                    error("Please enter your name")
+                    event.preventDefault()
+                }
+                if (email === "") {
+                    error("Please enter your email")
+                    event.preventDefault()
+                }
+                if (phone === "") {
+                    error("Please enter your phone")
+                    event.preventDefault()
+                }
+                if (address === "") {
+                    error("Please enter your address")
+                    event.preventDefault()
+                }
+                if (title === "") {
+                    error("Please enter your title")
+                    event.preventDefault()
+                }
+                if (content === "") {
+                    error("Please enter your name")
+                    event.preventDefault()
+                }
+                if (name !== "" && email !== "" && phone !== "" && address !== "" && title !== "" && content !== "") {
+                    $("form").unbind("submit").submit();
+                }
+
+            })
+            function error(message) {
+                $('.errorPr').html(message)
+                $('.errorPr').show()
+                $('.errorPr').css({
+                    'color': 'red',
+                    'font-size': '18px'
+                })
+            }
+        })
+
+        //    bai3
+        // $(document).ready(function () {
+        //     $('form').submit(function (event) {
+        //         event.preventDefault()
+
+        //         var address = $('#address').val()
+        //         if (address == "") {
+        //             error('Please enter information')
+        //             event.preventDefault();
+        //         } else {
+        //             window.location.href = 'https://www.facebook.com/profile.php?id=100034720028349'
+        //         }
+        //     })
+        //     function error(pr) {
+        //         $('.errorPr').html(pr)
+        //         $('.errorPr').show()
+        //     }
+        // })
+
+
+    </script>
+
+</head>
+
+<body>
+    <!-- bai1 -->
+    <!-- <form id="myForm">
+        <input id="name" type="text" name="name" placeholder="Your Name">
+        <input id="email" type="email" name="email" placeholder="Your Email">
+        <div style="display: none;" class="errorPr"></div>
+
+        <button type="submit">Submit</button>
+    </form> -->
+
+
+    <!-- bai2 -->
+    <!-- <form>
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name">
+        <button type="submit">Submit</button>
+    </form>
+    <p id="result"></p> -->
+
+    <!-- bai3 -->
+    <!-- <form>
+        <label for="name">Where you want to go now</label>
+        <input type="text" id="address" name="address">
+        <div style="display: none;" class="errorPr"></div>
+
+        <button type="submit">Click now</button>
+    </form> -->
+
+    <!-- <form>
+        <label for="name">Họ và tên:</label>
+        <input type="text" id="name" name="name">
+        <label for="name">Địa chỉ email:</label>
+        <input type="text" id="email" name="email">
+        <label for="name">Số điện thoại:</label>
+        <input type="text" id="phone" name="phone">
+        <label for="name">Địa chỉ nơi cư trú:</label>
+        <input type="text" id="address" name="address">
+        <label for="name">Tiêu đề:</label>
+        <input type="text" id="title" name="title" placeholder="Góp ý 24h">
+
+
+
+    </form>
+    <label for="name">Nội dung:</label>
+    <textarea name="message"></textarea> -->
+
+    <!-- <p id="result"></p> -->
+
+    <div class="input_container">
+        <form name="formValidation" id="formValidation" action="valid.html">
+            <div class="input-row ">
+                <label for="name">Name:</label>
+                <input class="wid" id="name" type="text" name="name">
+            </div>
+            <div class="input-row">
+                <label for="name">Email:</label>
+                <input class="wid" id="email" type="email" name="email">
+            </div>
+            <div class="input-row">
+                <label for="name">Phone:</label>
+                <input class="wid" id="phone" type="text" name="phone">
+            </div>
+            <div class="input-row">
+                <label for="name">Address:</label>
+                <input class="wid" id="address" type="text" name="address">
+            </div>
+            <div class="input-row">
+                <label for="name">Title:</label>
+                <input class="wid" id="title" type="text" name="title" placeholder="Feedback">
+            </div>
+            <div class="input-row">
+                <label for="name">Content:</label>
+                <textarea class="wid" id="content" name="formMessage" required></textarea>
+            </div>
+            <div class="text-center">
+                <input id="exit" type="submit" value="Submit">
+                <input type="submit" value="Exit">
+
+            </div>
+            <div style="display: none;" class="errorPr"></div>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

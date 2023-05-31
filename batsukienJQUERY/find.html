@@ -1,0 +1,57 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+    background-color: pink;
+}
+ul li span {
+    display: none;
+    margin-left: 40px;
+    background-color: yellow;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    //  yeu cau:
+    // - click vao Li nao thi SHOW SPAN con cua no len
+    $('li').click(function(){
+      $(this).find("span").show();
+
+    // - click vao Li khac thi SHOW SPAN con cua no len nhung phai HIDE cac SPAN khac. 
+    // - click vao Li dang co SPAN SHOW thi HIDE SPAN do lai
+      var showspan = $('span').hasClass('show')
+      if(showspan){
+        $('span').removeClass('show')
+        $('span').hide()
+      }else{
+        $('span').addClass('show')
+      }
+    }) 
+});
+</script>
+</head>
+
+<body >
+  <div>
+    <ul>
+      <li>li (child)1
+        <span>span (grandchild)</span>
+      </li>
+      <li>li (child)2
+        <span>span (grandchild)</span>
+      </li>
+      <li>li (child)3
+        <span>span (grandchild)</span>
+      </li>
+    </ul>   
+  </div>
+ 
+</body>
+
+</html> -->
+

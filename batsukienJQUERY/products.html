@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .myDiv{
+        border: 3px solid red;
+    }
+ul{
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+ul li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        
+        // vd1: change img
+        // $('.smallImg').click(function(){
+        //   var largeImgSrc = $('#largeImg').attr('src')
+        //   $(this).attr('src', largeImgSrc)
+        //   var smallImgSrc = $(this).attr('src')
+        //   $('#largeImg').attr('src', smallImgSrc)
+        // }) 
+
+        $('a').click(function(){
+            var getId = $(this).attr('id')
+            $('span' + getId).addClass('test')
+        })
+
+
+        
+    });
+</script>
+</head>
+<body>
+    <!-- <div class="myDiv" style="width: 400px;">
+        <div>
+            <img id="largeImg" src="https://down-vn.img.susercontent.com/file/328e4450d93593427789f4a1e73fe787" width="400px" alt="">
+        </div>
+        <div>
+            <ul>
+                <li><img class="smallImg" src="https://down-vn.img.susercontent.com/file/c0cd893035e308945eb3ed543b70f720" width="100px" alt=""></li>
+                <li><img class="smallImg" src="https://down-vn.img.susercontent.com/file/a69a98afb349d77ac40ff29f712c8ff7" width="100px" alt=""></li>
+                <li><img class="smallImg" src="https://down-vn.img.susercontent.com/file/4bccb914e3fc3a63c1c17527aa7810f9" width="100px" alt=""></li>
+                <li><img class="smallImg" src="https://down-vn.img.susercontent.com/file/d5e1484989bdf20f2c7be2184953f0c3" width="100px" alt=""></li>
+            </ul>
+        </div>
+    </div> -->
+ 
+    <a id="demo">click on this paregraph</a>
+    <span class="demo">click on that</span>
+
+</body>
+
+
+
+</html>
